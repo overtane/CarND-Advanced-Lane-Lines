@@ -78,7 +78,19 @@ the rest of the project.
 
 **GOAL:** *Use color transforms, gradients, etc., to create a thresholded binary image.*
 
-**TODO**
+From birds-eye image we generate a bitmask with 
+
+```
+rgb =       color_threshold(warped, 'R', (190,255))
+rgb = rgb & color_threshold(warped, 'G', (190,255)) 
+rgb = rgb & color_threshold(warped, 'B', (0,155))
+sobel = abs_sobel_threshold(warped, 'x', 17, (40,180))
+luminance = color_threshold(warped, 'L', (200,245))
+mask = np.zeros_like(sobel)
+mask[(sobel==1) | (luminance==1) | (rgb==1)] = 1
+```
+
+
 
 <img src="./output_images/mask.png" alt="Thresholded bitmask with lane line" width="800">
 
@@ -123,6 +135,7 @@ Now, points in the arrays are fitted to second order polynomial in order to crea
 
 **TODO**
 
+
 ## 4. Discussion
 
 ### 4.1
@@ -142,4 +155,6 @@ In real life, thresholding might be able to (or even should) adapt the light con
 
 <img src="./output_images/color_and_luminance_threshold_only.png" alt="Color thresholding excels" width="800">
 <img src="./output_images/color_and_luminance_threshold_only_2.png" alt="Color thresholding fails" width="800">
+
+**Sensor data:** Would need speed information for video pipe. Now I counted, that ...
 
