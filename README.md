@@ -223,8 +223,8 @@ Sample video frame is shown below:
 
 Below is a link to the processed project video:
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=6BQuBEHYT2Q
-" target="_blank"><img src="http://img.youtube.com/vi/6BQuBEHYT2Q/0.jpg" 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=KV3OqI1hoK8
+" target="_blank"><img src="http://img.youtube.com/vi/KV3OqI1hoK8/0.jpg" 
 alt="IMAGE ALT TEXT HERE" width="320" height="180" border="10" /></a>
 
 The project video uses basically the same thresholding parameters as the still images above (chapter 2.6). There is a small anomaly at 40s. Possibly detection of the lines at the far end of the lane are fails, and polynomial fitting skips the bending of lines. Algorithm recovers from the situation in couple of seconds. 
